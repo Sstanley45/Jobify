@@ -34,13 +34,13 @@ const Job = ({
           <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
           <JobInfo icon={<FaCalendarAlt />} text={date} />
           <JobInfo icon={<FaBriefcase />} text={jobType} />
-          <div className={`status ${status}`}>{ status}</div>
+          <div className={`status ${status}`}>{status}</div>
         </div>
 
         <footer>
           <div className="actions">
             <Link
-              to="/add-job"
+              to="home/add-job"
               onClick={() => setEditJob(_id)}
               className="btn edit-btn"
             >
