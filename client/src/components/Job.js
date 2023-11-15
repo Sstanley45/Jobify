@@ -40,7 +40,7 @@ const Job = ({
         <footer>
           <div className="actions">
             <Link
-              to="home/add-job"
+              to="/add-job"
               onClick={() => setEditJob(_id)}
               className="btn edit-btn"
             >
