@@ -177,10 +177,7 @@ const AppProvider = ({ children }) => {
   const updateUser = async (currentUser) => {
     dispatch({ type: UPDATE_USER_BEGIN });
     try {
-      const { data } = await authFetch.patch(
-        "https://jobify-omega.vercel.app/auth/updateUser",
-        currentUser
-      );
+      const { data } = await authFetch.patch("/auth/updateUser", currentUser);
       const { user, location, token } = data;
       dispatch({
         type: UPDATE_USER_SUCCESS,
@@ -210,7 +207,7 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CREATE_JOB_BEGIN });
     try {
       const { position, company, jobLocation, jobType, status } = state;
-      await authFetch.post("https://jobify-omega.vercel.app/jobs", {
+      await authFetch.post("/jobs", {
         position,
         company,
         jobLocation,
@@ -230,7 +227,7 @@ const AppProvider = ({ children }) => {
   };
 
   const getJobs = async () => {
-    let url = "https://jobify-omega.vercel.app/jobs";
+    let url = "/jobs";
     dispatch({ type: GET_JOBS_BEGIN });
     try {
       const { data } = await authFetch(url);
@@ -257,16 +254,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: EDIT_JOB_BEGIN });
     try {
       const { position, company, jobLocation, jobType, status } = state;
-      await authFetch.patch(
-        `https://jobify-omega.vercel.app/jobs/${state.editJobId}`,
-        {
-          position,
-          company,
-          jobLocation,
-          jobType,
-          status,
-        }
-      );
+      await authFetch.patch(`/jobs/${state.editJobId}`, {
+        position,
+        company,
+        jobLocation,
+        jobType,
+        status,
+      });
       dispatch({ type: EDIT_JOB_SUCCESS });
       dispatch({ type: CLEAR_VALUES });
     } catch (error) {
@@ -283,7 +277,7 @@ const AppProvider = ({ children }) => {
     dispatch({ type: DELETE_JOB_BEGIN });
 
     try {
-      await authFetch.delete(`https://jobify-omega.vercel.app/jobs/${id}`);
+      await authFetch.delete(`/jobs/${id}`);
       getJobs();
     } catch (error) {
       console.log(error.response);
