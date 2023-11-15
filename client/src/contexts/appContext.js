@@ -230,7 +230,7 @@ const AppProvider = ({ children }) => {
     let url = "/jobs";
     dispatch({ type: GET_JOBS_BEGIN });
     try {
-      const { data } = await authFetch(url);
+      const { data } = await authFetch.get(url);
       const { jobs, jobsLength, numOfPages } = data;
       dispatch({
         type: GET_JOBS_SUCCESS,
