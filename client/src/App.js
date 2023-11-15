@@ -14,7 +14,7 @@ function App() {
       <Routes>
         {/* nested pages */}
         <Route
-          path="/home"
+          path="/"
           element={
             <ProtectedRoute>
               <SharedLayout />
@@ -27,7 +27,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
         </Route>
 
-        <Route path="/" element={<Landing />}></Route>
+        <Route path="/landing" element={<Landing />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes> 
