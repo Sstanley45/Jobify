@@ -127,7 +127,7 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       dispatch({
         type: LOGIN_USER_ERROR,
-        payload: { msg: error.response.data.msg },
+        payload: { msg: error.response },
       });
     }
     clearAlert();
