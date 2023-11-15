@@ -281,7 +281,7 @@ const AppProvider = ({ children }) => {
       getJobs();
     } catch (error) {
       console.log(error.response);
-      logOutUser();
+     // logOutUser();
     }
   };
 
