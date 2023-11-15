@@ -1,17 +1,17 @@
 import express from "express";
 const app = express();
 import dotenv from "dotenv";
-import connectDB from "./db/connect.js";
+import connectDB from "../db/connect.js";
 dotenv.config();
 import "express-async-errors";
 import morgan from "morgan";
 //routers
-import authRouter from "./routes/authRoutes.js";
-import jobsRouter from "./routes/jobsRoutes.js";
+import authRouter from "../routes/authRoutes.js";
+import jobsRouter from "../routes/jobsRoutes.js";
 //middleware
-import notFoundMiddleware from "./middleware/not-found.js";
-import errorHandlerMiddleware from "./middleware/error-handler.js";
-import authenticateUser from "./middleware/Auth.js";
+import notFoundMiddleware from "../middleware/not-found.js";
+import errorHandlerMiddleware from "../middleware/error-handler.js";
+import authenticateUser from "../middleware/Auth.js";
 
 //middlewares
 
