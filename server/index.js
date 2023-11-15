@@ -23,11 +23,9 @@ app.use(express.json());
 const port = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-  res.json({ msg: "hello" });
+  res.send("SERVER IS RUNNING..");
 });
-app.get("/api/v1", (req, res) => {
-  res.json({ msg: "WELCOME" });
-});
+
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authenticateUser, jobsRouter);
