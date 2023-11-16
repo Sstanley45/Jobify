@@ -21,8 +21,8 @@ function App() {
             </ProtectedRoute>
           }
         >
-          <Route index element={<Stats />} /> 
-          <Route path="all-jobs" element={<AllJobs />} />
+          <Route path="stats" element={<Stats />} />
+          <Route index element={<AllJobs />} />
           <Route path="add-job" element={<AddJob />} />
           <Route path="profile" element={<Profile />} />
         </Route>
@@ -30,7 +30,7 @@ function App() {
         <Route path="/landing" element={<Landing />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="*" element={<Error />}></Route>
-      </Routes> 
+      </Routes>
     </BrowserRouter>
   );
 }
