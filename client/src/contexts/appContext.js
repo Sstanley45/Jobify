@@ -129,7 +129,7 @@ const AppProvider = ({ children }) => {
       console.log("logging error>>>> ",error.response.data.msg);
       dispatch({
         type: LOGIN_USER_ERROR,
-        payload: { msg: error.response },
+        payload: { msg: error.response.data.msg }, 
       });
     }
     clearAlert();
