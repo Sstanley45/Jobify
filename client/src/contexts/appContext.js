@@ -23,6 +23,7 @@ import {
   CREATE_JOB_ERROR,
   GET_JOBS_BEGIN,
   GET_JOBS_SUCCESS,
+  GET_JOBS_ERROR,
   SET_EDIT_JOB,
   DELETE_JOB_BEGIN,
   EDIT_JOB_BEGIN,
@@ -238,6 +239,7 @@ const AppProvider = ({ children }) => {
         payload: { jobs, jobsLength, numOfPages },
       });
     } catch (error) {
+      dispatch({ type: GET_JOBS_ERROR });
       console.log(error.response);
       // logOutUser()
     }
