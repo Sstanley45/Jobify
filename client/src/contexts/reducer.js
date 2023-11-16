@@ -95,7 +95,7 @@ const reducer = (state, action) => {
       isLoading: false,
       showAlert: true,
       alertType: "danger",
-      alertText: action.payload.msg,
+      alertText: action.payload.msg, 
     };
   }
 
