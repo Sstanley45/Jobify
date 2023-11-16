@@ -138,7 +138,7 @@ const AppProvider = ({ children }) => {
 
   const logOutUser = () => {
     dispatch({ type: LOGOUT_USER });
-   // removeFromLocalStorage();
+    removeFromLocalStorage();
   };
 
   //Axios
@@ -168,7 +168,8 @@ const AppProvider = ({ children }) => {
     (error) => {
       console.log(error);
       if (error.response.status === 401) {
-        logOutUser();
+        // logOutUser();
+        console.log(error,"error on interceptor on response"); 
       }
       return Promise.reject(error);
     }
