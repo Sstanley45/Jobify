@@ -126,7 +126,7 @@ const AppProvider = ({ children }) => {
 
       addToLocalStorage({ user, token, location });
     } catch (error) {
-      console.log("logging error>>>> ",error);
+      console.log("logging error>>>> ",error.response.data.msg);
       dispatch({
         type: LOGIN_USER_ERROR,
         payload: { msg: error.response },
