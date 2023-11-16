@@ -138,7 +138,7 @@ const AppProvider = ({ children }) => {
 
   const logOutUser = () => {
     dispatch({ type: LOGOUT_USER });
-    removeFromLocalStorage();
+   // removeFromLocalStorage();
   };
 
   //Axios
