@@ -168,8 +168,8 @@ const AppProvider = ({ children }) => {
     (error) => {
       console.log(error);
       if (error.response.status === 401) {
-        // logOutUser();
-        console.log(error,"error on interceptor on response"); 
+        console.log(error, "error on interceptor on response");
+        return; // logOutUser();
       }
       return Promise.reject(error);
     }
@@ -282,7 +282,7 @@ const AppProvider = ({ children }) => {
       getJobs();
     } catch (error) {
       console.log(error.response);
-     // logOutUser();
+      // logOutUser();
     }
   };
 
