@@ -30,6 +30,7 @@ import {
   EDIT_JOB_SUCCESS,
   EDIT_JOB_ERROR,
 } from "./actions";
+import { log } from "console";
 
 const token = localStorage.getItem("token");
 const user = localStorage.getItem("user");
@@ -126,6 +127,7 @@ const AppProvider = ({ children }) => {
 
       addToLocalStorage({ user, token, location });
     } catch (error) {
+      console.log("error logging in >>>>>", error);
       dispatch({
         type: LOGIN_USER_ERROR,
         payload: { msg: error.response },
